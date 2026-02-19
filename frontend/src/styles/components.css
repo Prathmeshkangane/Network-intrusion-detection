@@ -1,0 +1,67 @@
+/* ─── Component extras ───────────────────────────────────────────── */
+
+/* Arch chart legend */
+.arch-legend {
+  display: flex; justify-content: center; gap: 24px;
+  margin-top: 10px;
+}
+.arch-legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+.arch-legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+/* Dataset feature legend */
+.feat-legend {
+  display: flex; gap: 16px; margin-top: 8px;
+  font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary);
+}
+.feat-legend-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+
+/* Chart legend row */
+.chart-legend {
+  display: flex; gap: 16px;
+  font-size: 11px; font-family: var(--font-mono);
+  color: var(--text-muted); margin-top: 8px;
+}
+.chart-legend-item { display: flex; align-items: center; gap: 5px; }
+
+/* Confidence bar */
+.conf-bar-track {
+  height: 4px; background: var(--bg-hover);
+  border-radius: 2px; overflow: hidden; margin-top: 6px;
+}
+.conf-bar-fill { height: 100%; border-radius: 2px; transition: width 0.5s ease; }
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-header { animation: fadeUp 0.28s ease both; }
+.card        { animation: fadeUp 0.32s ease both; }
+.metric-card { animation: fadeUp 0.32s ease both; }
+
+/* Comparison table highlight badge */
+.highlight-badge {
+  display: inline-block;
+  background: var(--accent-dim); color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  font-size: 10px; font-weight: 600;
+  padding: 1px 6px; margin-left: 6px;
+  font-family: var(--font-mono);
+}
+
+/* Loading shimmer */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+.loading-shimmer {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: var(--radius-sm);
+}
